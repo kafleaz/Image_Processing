@@ -1,4 +1,4 @@
-
+#contrast stretching
 import cv2
 import numpy as np
 
@@ -10,16 +10,21 @@ def pixelVal(pix,r1,s1,r2,s2):
         return ((s2-s1)/(r2-r1)) * (pix-r1) + s1
     else:
         return ((255-s2)/(255-r2)) * (pix-r2) + s2
-img= cv2.imread('./Image_Processing/photo2.jpg')
 
-# Define parameters.
+img = cv2.imread('photo2.jpg')
+image= cv2.resize(img,(400, 500))
+cv2.imshow('Input Image', image)
+
+#parameter
 r1 = 70
 s1 = 0
-r2 = 140
+r2 = 255
 s2 = 255
 
-#To use nmumpy array
+pixelVal_vec = np.vectorize(pixelVal)
 
-cv2.imshow('Log Transformed',log_transformed)
+cont_st_img = pixelVal_vec(img, r1, s1, r2, s2)
+
+image= cv2.resize(cont_st_img,(400, 500))
+cv2.imshow('Output Image', image)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
