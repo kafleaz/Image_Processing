@@ -1,3 +1,5 @@
+#Histogram equilization
+
 # import Opencv
 import cv2
  

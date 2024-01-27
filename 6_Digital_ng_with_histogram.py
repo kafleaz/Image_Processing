@@ -1,3 +1,5 @@
+#Digital Negative with histogram
+
 import cv2
 import matplotlib.pyplot as plt
 # Read an image

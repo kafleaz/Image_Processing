@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 
 # Load the image
 img = cv2.imread('./Image_Processing/meroimage.jpg')
+img = cv2.resize(img,(400, 500))
+cv2.imshow('Original',img)
 
 # Calculate the histogram for each color channel
 color = ('b', 'g', 'r')

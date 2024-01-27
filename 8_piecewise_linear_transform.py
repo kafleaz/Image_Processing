@@ -1,6 +1,9 @@
+#Piecewise linear transformation
+
 #contrast stretching
 import cv2
 import numpy as np
+
 
 #function
 def pixelVal(pix,r1,s1,r2,s2):

@@ -1,3 +1,4 @@
+# BGR to Black and white conversion
 import cv2
 import numpy as np
 
