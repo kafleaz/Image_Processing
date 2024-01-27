@@ -11,7 +11,7 @@ def pixelVal(pix,r1,s1,r2,s2):
     else:
         return ((255-s2)/(255-r2)) * (pix-r2) + s2
 
-img = cv2.imread('photo2.jpg')
+img = cv2.imread('./Image_Processing/photo2.jpg')
 image= cv2.resize(img,(400, 500))
 cv2.imshow('Input Image', image)
 
@@ -25,6 +25,6 @@ pixelVal_vec = np.vectorize(pixelVal)
 
 cont_st_img = pixelVal_vec(img, r1, s1, r2, s2)
 
-image= cv2.resize(cont_st_img,(400, 500))
-cv2.imshow('Output Image', image)
+outimage= cv2.resize(cont_st_img,(400, 500))
+cv2.imshow('Output Image', outimage)
 cv2.waitKey(0)

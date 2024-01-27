@@ -1,12 +1,10 @@
-import cv2
-import matplotlib.pyplot as plt
-img= cv2.imread('gray.png')
-image= cv2.resize(img,(400, 500))
-cv2.imshow('Original',image)
+ # """Applies weighted average filtering using NumPy
 
+  # Args:
+  #   image: The input image as a NumPy array.
+  #   kernel_size: The size of the kernel (odd integer).
+  #   weights: A 2D array of weights representing the kernel.
 
-img_neg = 255-img
-image= cv2.resize(img_neg,(400, 500))
-cv2.imshow('Negative',image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+  # Returns:
+  #   The filtered image as a NumPy array.
+  # """
