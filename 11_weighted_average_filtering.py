@@ -1,14 +1,10 @@
-# Low Pass SPatial Domain Filtering 
-# to observe the blurring effect 
-
-
 import cv2 
 import numpy as np 
 
-	
 # Read the image 
-# img = cv2.imread('./Image', 0) 
 img = cv2.imread('./Image_Processing/photo2.jpg')
+img = cv2.resize(img,(400, 500))
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # Obtain number of rows and columns 
 # of the image 
 m, n = img.shape 
@@ -22,12 +18,17 @@ img_new = np.zeros([m, n])
 
 for i in range(1, m-1): 
 	for j in range(1, n-1): 
-		temp = img[i-1, j-1]*mask[0, 0]+img[i-1, j]*mask[0, 1]
-		+img[i-1, j + 1]*mask[0, 2]+img[i, j-1]*mask[1, 0]+ img[i, j]*mask[1, 1]
-		+img[i, j + 1]*mask[1, 2]+img[i + 1, j-1]*mask[2, 0]+img[i + 1, j]*mask[2, 1]
+		temp = img[i-1, j-1]*mask[0, 0]+img[i-1, j]*mask[0, 1] \
+		+img[i-1, j + 1]*mask[0, 2]+img[i, j-1]*mask[1, 0]+ img[i, j]*mask[1, 1] \
+		+img[i, j + 1]*mask[1, 2]+img[i + 1, j-1]*mask[2, 0]+img[i + 1, j]*mask[2, 1] \
 		+img[i + 1, j + 1]*mask[2, 2] 
 		
 		img_new[i, j]= temp 
 		
 img_new = img_new.astype(np.uint8) 
-cv2.imwrite('blurred.tif', img_new) 
+both_image = np.hstack([img, img_new])
+# Display the images
+cv2.imshow('Averaging',both_image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
