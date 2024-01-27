@@ -23,7 +23,7 @@ for i in range(1, m-1):
 		+img[i, j + 1]*mask[1, 2]+img[i + 1, j-1]*mask[2, 0]+img[i + 1, j]*mask[2, 1] \
 		+img[i + 1, j + 1]*mask[2, 2] 
 		
-		img_new[i, j]= temp 
+		img_new[i, j]= temp
 		
 img_new = img_new.astype(np.uint8) 
 both_image = np.hstack([img, img_new])

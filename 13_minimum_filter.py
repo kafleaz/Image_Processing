@@ -28,7 +28,7 @@ for i in range(1, m - 1):
         ]
 
         temp = np.sort(temp)
-        img_new1[i, j] = temp[3]  # Assign the minimum value
+        img_new1[i, j] = temp[0]  # Assign the minimum value
 
 # Convert to uint8 for display
 img_new2 = img_new1.astype(np.uint8)
