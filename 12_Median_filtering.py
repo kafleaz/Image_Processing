@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Read the image (adjust path if needed)
-img = cv2.imread('./Image_Processing/salt3.png')
+img = cv2.imread('salt3.png')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img_noisy1 = cv2.resize(img, (400, 500))
 

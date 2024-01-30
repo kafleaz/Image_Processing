@@ -2,7 +2,7 @@ import cv2
 import numpy as np 
 
 # Read the image 
-img = cv2.imread('./Image_Processing/photo2.jpg')
+img = cv2.imread('photo2.jpg')
 img = cv2.resize(img,(400, 500))
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # Obtain number of rows and columns 

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Read the image (adjust path if needed)
-img = cv2.imread('./Image_Processing/man.jpg', 0)
+img = cv2.imread('man.jpg', 0)
 
 # Define the structuring element
 se = np.ones((5,5), np.uint8)

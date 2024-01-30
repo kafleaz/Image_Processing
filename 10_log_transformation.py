@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img= cv2.imread('./Image_Processing/photo2.jpg')
+img= cv2.imread('photo2.jpg')
 image= cv2.resize(img,(400, 500))
 
 # cv2.imshow('Original',image)
